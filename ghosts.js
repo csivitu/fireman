@@ -104,7 +104,7 @@ function moveGhost(ghost, direction) {
 let gameOver=false;
 function checkCollision(ghost) {
     return (
-        fireman.x < ghost.x + ghost.width &&
+        fireman.x < ghost.x + ghost.width &&bu
         fireman.x + fireman.width > ghost.x &&
         fireman.y < ghost.y + ghost.height &&
         fireman.y + fireman.height > ghost.y
