@@ -85,16 +85,16 @@ window.addEventListener("keydown", function (e) {
 
 window.addEventListener("keyup", function (e) {
     switch (e.key) {
-        case "ArrowUp":
+        case "W":
             moveUp = false;
             break;
-        case "ArrowDown":
+        case "S":
             moveDown = false;
             break;
-        case "ArrowLeft":
+        case "A":
             moveLeft = false;
             break;
-        case "ArrowRight":
+        case "D":
             moveRight = false;
             break;
     }
