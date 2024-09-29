@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (score !== null) {
         scoreMessage.textContent = `Congratulations! Your score is ${score}.`;
     } else {
-        scoreMessage.textContent = 'Score not found.';
+        scoreMessage.textContent = `${score}`;
     }
 //Redirect to the main page
 });
