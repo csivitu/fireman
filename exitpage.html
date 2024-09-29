@@ -13,10 +13,13 @@
         <h1>GAME OVER</h1>
         <p id="score-message" >Loading score...</p>
         <button id="restart">Restart Game</button>
-        
     </div>
-    
-    
-    <script src="./jsfiles/exit.js"></script>
+    <script>
+        document
+        .getElementById("restart")
+        .addEventListener("click", function () {
+          window.location.href = "frontpage.html";
+        });
+        </script>
 </body>
 </html>
