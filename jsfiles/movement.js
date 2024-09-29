@@ -110,12 +110,12 @@ function isCollidingWithWall(x, y) {
         for (let ty = tileY1; ty <= tileY2; ty++) {
             if (ty >= 0 && ty < maze.length && tx >= 0 && tx < maze[0].length) {
                 if (maze[ty][tx] === 1) {
-                    return 1; 
+                    return True; 
                 }
             }
         }
     }
-    return 0; 
+    return False; 
 }
 
 
