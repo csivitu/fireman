@@ -1,9 +1,9 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-import { maze } from './maze.js';
+import { maze } from './jsfiles/maze.js';
 
-import { fireman } from './movement.js'; 
+import { fireman } from './jsfiles/movement.js'; 
 const tilesize = Math.min(canvas.width / maze[0].length, canvas.height / maze.length);
 const ghostObject = {
     height: tilesize,
