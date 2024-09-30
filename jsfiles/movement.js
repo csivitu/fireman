@@ -5,7 +5,7 @@ const ctx = canvas.getContext("2d");
 const scoreElement = document.getElementById("score");
 
 import { draw as drawMaze, getWalls as getMazeWalls, maze } from './maze.js';
-import { updateGhosts } from './ghosts.js';
+import { updateGhosts } from '../ghosts.js';
 
 const tilesize = Math.min(canvas.width / maze[0].length, canvas.height / maze.length);
 console.log(tilesize);
@@ -15,7 +15,7 @@ console.log(tilesize);
     width:30,
     height: tilesize
 };
-
+export { fireman };
 const gem = {
     x: 50,
     y: 50,
@@ -110,12 +110,12 @@ function isCollidingWithWall(x, y) {
         for (let ty = tileY1; ty <= tileY2; ty++) {
             if (ty >= 0 && ty < maze.length && tx >= 0 && tx < maze[0].length) {
                 if (maze[ty][tx] === 1) {
-                    return 1; 
+                    return true; 
                 }
             }
         }
     }
-    return 0; 
+    return false; 
 }
 
 
