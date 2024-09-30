@@ -1,37 +1,33 @@
 body {
-    font-family: cursive;
+    width: 1024px;  /* Fixed width to force desktop-like view */
+    height: 768px;  /* Fixed height */
+    margin: 0 auto;  /* Center it on the page */
+    overflow: hidden;  /* Disable scrolling */
     background-color: #161313;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 800px; /* Added fixed width NOW WILL BE UNRESPONSIVE OF MOBILE DEVICES DUE TO FIXED WIDTH */
-    margin: 0;
+    display: block;
+    font-family: Arial, sans-serif;
 }
 
-.gameover {
-    text-align: center;
+#container {
+    width: 1024px;  /* Fixed container width */
+    height: 768px;  /* Fixed container height */
+    background-color: #fff;
+    position: relative;
 }
 
-h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
-}
-
-#score {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+h1, p, button {
+    width: 600px;  /* Fixed width for elements */
+    margin: 0 auto;
 }
 
 button {
-    font-size: 1.2em;
-    padding: 10px 20px;
+    width: 150px;  /* Fixed button size */
+    height: 50px;
     background-color: #f44;
     border: none;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 16px;
 }
 
 button:hover {
