@@ -4,15 +4,16 @@ body {
     margin: 0 auto;  /* Center it on the page */
     overflow: hidden;  /* Disable scrolling */
     background-color: #161313;
-    display: block;
-    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-#container {
-    width: 1024px;  /* Fixed container width */
-    height: 768px;  /* Fixed container height */
-    background-color: #fff;
-    position: relative;
+.gameover {
+    text-align: center;
 }
 
 h1, p, button {
