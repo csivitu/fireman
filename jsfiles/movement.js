@@ -32,6 +32,7 @@ firemanImage.src = "images/file.png";
 const gemImage = new Image();
 gemImage.src = "images/file copy.png";
 
+// issue 9
 firemanImage.onload = () => {
     console.log("Fireman image loaded");
     if (gemImage.complete) {
