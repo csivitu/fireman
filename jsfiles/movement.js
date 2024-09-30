@@ -118,7 +118,6 @@ function isCollidingWithWall(x, y) {
     return false; 
 }
 
-
 function update() {
     window.requestAnimationFrame(update);
     if (moveUp || moveDown) {
@@ -134,12 +133,11 @@ function update() {
     let nextX = fireman.x + Xspeed;
     let nextY = fireman.y + Yspeed;
 
-    if (isCollidingWithWall(nextX, nextY)==0) {
+    if (isCollidingWithWall(nextX, nextY) == 0) {
         fireman.x = nextX;
         fireman.y = nextY;
     }
 
-  
     if (fireman.x < 0) fireman.x = 0;
     if (fireman.y < 0) fireman.y = 0;
     if (fireman.x + fireman.width > canvas.width) fireman.x = canvas.width - fireman.width;
@@ -151,19 +149,19 @@ function update() {
         fireman.y < gem.y + gem.height &&
         fireman.y + fireman.height > gem.y
     ) {
-        
-    
-
         computeValidPositions();
-        let randomIndex = Math.floor(Math.random() * validPositions.length);
-        let newPosition = validPositions[randomIndex];
-        gem.x = newPosition.x;
-        gem.y = newPosition.y;
+        if (validPositions.length > 0) {
+            let randomIndex = Math.floor(Math.random() * validPositions.length);
+            let newPosition = validPositions[randomIndex];
+            gem.x = newPosition.x;
+            gem.y = newPosition.y;
+        } else {
+            console.error("No valid positions available for the gem.");
+        }
     }
 
     render();
 }
-
 
 function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
