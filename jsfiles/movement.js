@@ -9,7 +9,7 @@ import { updateGhosts } from './ghosts.js';
 
 const tilesize = Math.min(canvas.width / maze[0].length, canvas.height / maze.length);
 console.log(tilesize);
-const fireman = {
+ const fireman = {
     x: 32,
     y: tilesize,
     width:30,
@@ -33,7 +33,6 @@ gemImage.src = "images/file copy.png";
 
 firemanImage.onload = () => {
     console.log("Fireman image loaded");
-    computeValidPositions(); 
     if (gemImage.complete) {
         gameLoop();
     } else {
@@ -43,6 +42,7 @@ firemanImage.onload = () => {
         };
     }
 };
+
 function resizeCanvas() {
     const viewportHeight = window.innerHeight;
     const viewportWidth = window.innerWidth;
@@ -54,15 +54,8 @@ function resizeCanvas() {
 resizeCanvas();
 
 
-function computeValidPositions() {
-    validPositions.length = 0; 
-    for (let y = 0; y < maze.length; y++) {
-        for (let x = 0; x < maze[y].length; x++) {
-            if (maze[y][x] === 0) { 
-                validPositions.push({ x: x * tilesize, y: y * tilesize });
-            }
-        }
-    }
+function computeValidPositions(){
+    //write the function to compute valid positions 
 }
 
 let Xspeed = 0;
@@ -89,9 +82,6 @@ window.addEventListener("keydown", function (e) {
             break;
     }
 }, false);
-
-
-
 
 window.addEventListener("keyup", function (e) {
     switch (e.key) {
