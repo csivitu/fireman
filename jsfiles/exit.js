@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const scoreMessage = document.getElementById('score-message');
+    const restartButton = document.getElementById('restart');
 
-    
     const score = localStorage.getItem('gameScore');
 
     if (score !== null) {
@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         scoreMessage.textContent = 'Score not found.';
     }
-//Redirect to the main page
+
+    restartButton.addEventListener('click', () => {
+        window.location.href = 'mainpage.html'; 
+    });
 });
-
-
-
 
 
