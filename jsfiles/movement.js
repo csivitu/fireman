@@ -150,7 +150,7 @@ function update() {
     if (fireman.y < 0) fireman.y = 0;
     if (fireman.x + fireman.width > canvas.width) fireman.x = canvas.width - fireman.width;
     if (fireman.y + fireman.height > canvas.height) fireman.y = canvas.height - fireman.height;
-
+    // fixed the collison with the gems
     if (
         fireman.x < gem.x + gem.width &&
         fireman.x + fireman.width > gem.x &&
