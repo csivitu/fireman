@@ -20,7 +20,7 @@ const gem = {
     x: 50,
     y: 50,
     width: 20,
-    height: tilesize
+    height: tilesize,
 };
 
 const validPositions = [];
@@ -68,16 +68,16 @@ let moveDown = false;
 
 window.addEventListener("keydown", function (e) {
     switch (e.key) {
-        case "ArrowUp":
+        case "w":
             moveUp = true;
             break;
-        case "ArrowDown":
+        case "s":
             moveDown = true;
             break;
-        case "ArrowLeft":
+        case "a":
             moveLeft = true;
             break;
-        case "ArrowRight":
+        case "d":
             moveRight = true;
             break;
     }
@@ -85,16 +85,16 @@ window.addEventListener("keydown", function (e) {
 
 window.addEventListener("keyup", function (e) {
     switch (e.key) {
-        case "ArrowUp":
+        case "w":
             moveUp = false;
             break;
-        case "ArrowDown":
+        case "s":
             moveDown = false;
             break;
-        case "ArrowLeft":
+        case "a":
             moveLeft = false;
             break;
-        case "ArrowRight":
+        case "d":
             moveRight = false;
             break;
     }
@@ -150,10 +150,8 @@ function update() {
         fireman.x + fireman.width > gem.x &&
         fireman.y < gem.y + gem.height &&
         fireman.y + fireman.height > gem.y
-    ) {
+    ) { 
         
-    
-
         computeValidPositions();
         let randomIndex = Math.floor(Math.random() * validPositions.length);
         let newPosition = validPositions[randomIndex];
