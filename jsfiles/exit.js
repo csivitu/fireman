@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreMessage = document.getElementById('score-message');
     const restartButton = document.getElementById('restart');
 
-    const score = localStorage.getItem('gameScore');
-
+    const score = parseInt(localStorage.getItem('gameScore'), 10);
+    
     if (score !== null) {
         scoreMessage.textContent = `Congratulations! Your score is ${score}.`;
     } else {

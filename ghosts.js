@@ -113,12 +113,12 @@ function checkCollision(ghost) {
 
 
 function checkCollisions() {
-    const ghosts = [pinky, inky, clyde];
+    const ghosts = [pinky, inky, clyde, blinky];
     
     for (let ghost of ghosts) {
         if (checkCollision(ghost)) {
-            gameOver=true;
-            localStorage.setItem('gameScore', score);
+            gameOver = true;
+            localStorage.setItem('gameScore', score.getAttribute('data-score'));
             window.location.href = 'exitpage.html';
             return; 
         }
