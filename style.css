@@ -6,6 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 800px; /* Added fixed width NOW WILL BE UNRESPONSIVE OF MOBILE DEVICES DUE TO FIXED WIDTH */
     margin: 0;
 }
 
