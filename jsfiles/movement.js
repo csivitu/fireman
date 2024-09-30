@@ -54,10 +54,19 @@ function resizeCanvas() {
 resizeCanvas();
 
 
-function computeValidPositions(){
-    //write the function to compute valid positions 
-}
+function computeValidPositions() {
+    validPositions.length = 0; 
+    const tileWidth = 32;
+    const tileHeight = tilesize;
 
+    for (let y = 0; y < maze.length; y++) {
+        for (let x = 0; x < maze[0].length; x++) {
+            if (maze[y][x] === 0) { 
+                validPositions.push({ x: x * tileWidth, y: y * tileHeight });
+            }
+        }
+    }
+}
 let Xspeed = 0;
 let Yspeed = 0;
 let moveLeft = false;
