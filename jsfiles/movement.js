@@ -1,5 +1,5 @@
 console.log("movement.js is loaded");
-
+let score = 0;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const scoreElement = document.getElementById("score");
@@ -9,10 +9,10 @@ import { updateGhosts } from '../ghosts.js';
 
 const tilesize = Math.min(canvas.width / maze[0].length, canvas.height / maze.length);
 console.log(tilesize);
- const fireman = {
+const fireman = {
     x: 32,
     y: tilesize,
-    width:30,
+    width: 30,
     height: tilesize
 };
 export { fireman };
@@ -53,27 +53,26 @@ function resizeCanvas() {
 }
 resizeCanvas();
 
-
 function computeValidPositions() {
-    validPositions.length = 0; 
+    validPositions.length = 0;
     const tileWidth = 32;
     const tileHeight = tilesize;
 
     for (let y = 0; y < maze.length; y++) {
         for (let x = 0; x < maze[0].length; x++) {
-            if (maze[y][x] === 0) { 
+            if (maze[y][x] === 0) {
                 validPositions.push({ x: x * tileWidth, y: y * tileHeight });
             }
         }
     }
 }
+
 let Xspeed = 0;
 let Yspeed = 0;
 let moveLeft = false;
 let moveRight = false;
 let moveUp = false;
 let moveDown = false;
-
 
 window.addEventListener("keydown", function (e) {
     switch (e.key) {
@@ -119,12 +118,12 @@ function isCollidingWithWall(x, y) {
         for (let ty = tileY1; ty <= tileY2; ty++) {
             if (ty >= 0 && ty < maze.length && tx >= 0 && tx < maze[0].length) {
                 if (maze[ty][tx] === 1) {
-                    return true; 
+                    return true;
                 }
             }
         }
     }
-    return false; 
+    return false;
 }
 
 function update() {
@@ -142,7 +141,7 @@ function update() {
     let nextX = fireman.x + Xspeed;
     let nextY = fireman.y + Yspeed;
 
-    if (isCollidingWithWall(nextX, nextY) == 0) {
+    if (!isCollidingWithWall(nextX, nextY)) {
         fireman.x = nextX;
         fireman.y = nextY;
     }
@@ -158,6 +157,7 @@ function update() {
         fireman.y < gem.y + gem.height &&
         fireman.y + fireman.height > gem.y
     ) {
+        score += 1; 
         computeValidPositions();
         if (validPositions.length > 0) {
             let randomIndex = Math.floor(Math.random() * validPositions.length);
@@ -182,8 +182,7 @@ function render() {
     }
 }
 
-
 function gameLoop() {
     update();
-    updateGhosts();  
+    updateGhosts();
 }
