@@ -118,4 +118,19 @@ if (!ctx) {
         return walls;
     }
     
+    // Prevent game from being responsive on mobile devices
+const disableMobileStyles = () => {
+    const css = `
+        body, canvas {
+            touch-action: none;
+            user-select: none;
+            pointer-events: none;
+        }
+    `;
+    const style = document.createElement('style');
+    style.appendChild(document.createTextNode(css));
+    document.head.appendChild(style);
+};
+
+disableMobileStyles();
     
