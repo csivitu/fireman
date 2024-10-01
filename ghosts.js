@@ -51,7 +51,9 @@ function moveGhostRandomly(ghost) {
         // When the counter reaches zero, choose a new random direction
         ghost.framesToChangeDirection = Math.floor(Math.random() * 60) + 30;
         ghost.currentDirection = getRandomDirection();
-    } 
+    } else {
+        ghost.framesToChangeDirection--;
+    }
     moveGhost(ghost, ghost.currentDirection);
 }
 
@@ -80,13 +82,6 @@ function canMoveTo(x, y,ghost) {
 function moveGhost(ghost, direction) {
     let newX = ghost.x;
     let newY = ghost.y;
-
-    const OffsetX = Math.random() > 0.5 ? ghost.speed * (Math.random() - 0.5) : 0; 
-    const OffsetY = Math.random() > 0.5 ? ghost.speed * (Math.random() - 0.5) : 0;
-
-   
-    newX += OffsetX;
-    newY += OffsetY;
   
     switch (direction) {
         case "up": newY -= ghost.speed; break;
