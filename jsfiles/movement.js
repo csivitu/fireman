@@ -3,6 +3,7 @@ let score = 0;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const scoreElement = document.getElementById("score");
+scoreElement.setAttribute('data-score', score)
 
 import { draw as drawMaze, getWalls as getMazeWalls, maze } from './maze.js';
 import { updateGhosts } from '../ghosts.js';
@@ -179,6 +180,7 @@ function render() {
     ctx.drawImage(gemImage, gem.x, gem.y, gem.width, gem.height);
     if (scoreElement) {
         scoreElement.textContent = "Score: " + score;
+        scoreElement.setAttribute('data-score', score);
     }
 }
 
