@@ -36,3 +36,23 @@ button {
 button:hover {
     background-color: #d33;
 }
+
+canvas {
+    border: 1px solid black;
+    display: block; /* Ensures the canvas is displayed as a block element */
+    margin: 0 auto; /* Centers the canvas horizontally */
+    max-width: 100%; /* Ensures the canvas doesn't overflow its container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+#main {
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+#center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -112,8 +112,8 @@ window.addEventListener("keyup", function (e) {
 function isCollidingWithWall(x, y) {
     const tileX1 = Math.floor(x / tilesize);
     const tileY1 = Math.floor(y / tilesize);
-    const tileX2 = Math.floor((x + fireman.width) / tilesize);
-    const tileY2 = Math.floor((y + fireman.height) / tilesize);
+    const tileX2 = Math.floor((x + fireman.width - 1) / tilesize);
+    const tileY2 = Math.floor((y + fireman.height - 1) / tilesize);
 
     for (let tx = tileX1; tx <= tileX2; tx++) {
         for (let ty = tileY1; ty <= tileY2; ty++) {
